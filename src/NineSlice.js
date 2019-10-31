@@ -75,7 +75,9 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
    *    and height will be computed from the source texture.
    */
   constructor(scene, _sliceConfig, positionConfig = null) {
-    super(scene, 0, 0, 32, 32)
+    const {x, y, width, height} = positionConfig
+
+    super(scene, 0, 0, width || 32, height || 32)
 
     this.initFrames = this.initFrames.bind(this)
     this.getUsableBounds = this.getUsableBounds.bind(this)
