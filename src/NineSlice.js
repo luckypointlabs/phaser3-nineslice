@@ -75,9 +75,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
    *    and height will be computed from the source texture.
    */
   constructor(scene, _sliceConfig, positionConfig = null) {
-    const {x, y, width, height} = positionConfig
-
-    super(scene, 0, 0, width || 32, height || 32)
+    super(scene, positionConfig ? positionConfig.x : 0, positionConfig ? positionConfig.y : 0, positionConfig ? positionConfig.width : 32, positionConfig ? positionConfig.height : 32);
     console.log("LPL Custom NineSlice Loaded");
     this.initFrames = this.initFrames.bind(this)
     this.getUsableBounds = this.getUsableBounds.bind(this)
